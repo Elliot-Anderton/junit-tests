@@ -13,6 +13,10 @@ public class StudentTests {
     @Before
     public void setJeff() {
         jeff = new Student(9, "Jeff");
+
+        jeff.addGrade(4);
+        jeff.addGrade(5);
+        jeff.addGrade(3);
     }
 
     @Test
@@ -32,15 +36,17 @@ public class StudentTests {
 
     @Test
     public void testaddGrade() {
-        jeff.addGrade(76);
-        jeff.addGrade(82);
-        jeff.addGrade(56);
-
         ArrayList<Integer> expected= new ArrayList<>();
-        expected.add(76);
-        expected.add(82);
-        expected.add(56);
+        expected.add(4);
+        expected.add(5);
+        expected.add(3);
 
         assertEquals(expected, jeff.getGrades());
+    }
+
+    @Test
+    public void testgetGradeAverage() {
+
+        assertEquals(4, jeff.getGradeAverage());
     }
 }

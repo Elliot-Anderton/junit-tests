@@ -20,6 +20,11 @@ public class StudentTests {
     }
 
     @Test
+    public void checkSetUP(){
+        assertNotNull(jeff);
+    }
+
+    @Test
     public void testConstructor() {
         assertNotNull(jeff);
     }
@@ -41,6 +46,7 @@ public class StudentTests {
         expected.add(5);
         expected.add(3);
 
+        assertEquals(3, jeff.getGrades().size());
         assertEquals(expected, jeff.getGrades());
     }
 
